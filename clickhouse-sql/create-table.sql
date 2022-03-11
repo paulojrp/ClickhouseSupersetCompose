@@ -18,5 +18,5 @@ CREATE TABLE monitoring
 )
 ENGINE = MergeTree
 PARTITION BY toYYYYMMDD(ts_bucket)
-PRIMARY KEY (ts_bucket, label_key)
-ORDER BY (ts_bucket, label_key);
+PRIMARY KEY (ts_bucket, label_key, label_value)
+ORDER BY (ts_bucket, label_key, label_value);

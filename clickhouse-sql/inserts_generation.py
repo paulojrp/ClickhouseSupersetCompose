@@ -38,7 +38,7 @@ def generate_label():
     item = random.choice(list(labels.items()))
 
     if item[1] == None:
-        return ('', '')
+        return ('__global__', '__global__')
 
     label_value = random.choice(list(item[1]))
     return (item[0], label_value)
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     for i in range(TIME_BUCKETS):
         time_bucket = TIME_START + DAY_IN_MS * i
 
-        labels = {('', '')}
+        labels = {('__global__', '__global__')}
         for i in range(LABEL_PER_BUCKET_MIN, LABEL_PER_BUCKET_MAX):
             labels.add(generate_label())
 
